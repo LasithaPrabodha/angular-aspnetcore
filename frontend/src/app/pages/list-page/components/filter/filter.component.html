@@ -1,0 +1,39 @@
+<div class="filter-wrapper">
+  <h6 class="">{{ title }}</h6>
+
+  <div [ngSwitch]="type">
+    <div *ngSwitchCase="'typeahead'">
+      <input
+        type="text"
+        class="form-control"
+        #instance="ngbTypeahead"
+        placeholder="Select brand"
+        [formControl]="filter"
+        [ngbTypeahead]="search"
+        [resultTemplate]="rt"
+        [inputFormatter]="formatter"
+        (focus)="focus$.next($event.target.value)"
+        (click)="click$.next($event.target.value)"
+      />
+
+      <ng-template #rt let-r="result" let-t="term">
+        <img [src]="r['logo']" class="mr-1" style="width: 16px" />
+        <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+      </ng-template>
+    </div>
+    <div *ngSwitchCase="'array'" class="range-wrapper">
+      <ng-container *ngFor="let item of $any(filter).controls; let i = index">
+        <input
+          type="number"
+          min="0"
+          class="form-control"
+          [attr.placeholder]="i === 0 ? 'Min' : 'Max'"
+        />
+      </ng-container>
+    </div>
+
+    <button class="btn btn-outline-secondary btn-block mt-3">
+      <h6 class="mb-1">Apply</h6>
+    </button>
+  </div>
+</div>

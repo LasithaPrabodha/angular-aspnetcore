@@ -1,0 +1,25 @@
+.container {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 8px 0 #d4ded9;
+    border-radius: 4px;
+  }
+
+  .price {
+    color: green;
+    font-weight: 500;
+  }
+  .location {
+    color: #707676;
+  }
+
+  .image-container {
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

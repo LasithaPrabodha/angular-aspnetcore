@@ -1,0 +1,22 @@
+.page-wrapper {
+  padding: 16px;
+}
+.row {
+  height: 100%;
+}
+
+.list-wrapper {
+  border-left: 2px #eee solid;
+}
+
+.search {
+  position: relative;
+  margin-bottom: 8px;
+  .btn-primary {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 38px;
+    width: 100px;
+  }
+}

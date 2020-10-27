@@ -1,0 +1,10 @@
+<ng-container *ngFor="let item of carlist; let i = index">
+  <app-car-list-item
+    [image]="item.img"
+    [name]="item.name"
+    [price]="item.price"
+    [location]="item.location"
+    [mileage]="item.mileage"
+  ></app-car-list-item>
+  <hr *ngIf="i !== carlist.length - 1" />
+</ng-container>

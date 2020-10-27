@@ -1,0 +1,27 @@
+.filter-wrapper {
+  margin-bottom: 24px;
+  .card-header {
+    padding: 4px 12px;
+  }
+
+  .range-wrapper {
+    display: flex;
+
+    > :nth-child(2) {
+      margin-left: 8px;
+    }
+  }
+
+  // .btn-outline-secondary {
+  //   border-color: #adb5bd;
+
+  //   &:hover {
+  //     background-color: #adb5bd;
+  //     border-color: #adb5bd;
+  //   }
+
+  //   &:focus {
+  //     box-shadow: 0 0 0 0.2rem rgb(108 117 125 / 25%);
+  //   }
+  // }
+}

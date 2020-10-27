@@ -1,0 +1,35 @@
+<div class="page-wrapper">
+  <div class="row">
+    <div class="col-md-3 filters-wrapper">
+      <app-filter
+        title="Brand"
+        [filter]="form.controls.brand"
+        type="typeahead"
+      ></app-filter>
+      <app-filter
+        title="Year"
+        [filter]="form.controls.year"
+        type="array"
+      ></app-filter>
+      <app-filter
+        title="Price"
+        [filter]="form.controls.price"
+        type="array"
+      ></app-filter>
+    </div>
+    <div class="col-md-9 list-wrapper">
+      <div class="container">
+        <div class="search">
+          <input
+            type="text"
+            class="form-control input-sm"
+            maxlength="64"
+            placeholder="What are you looking for?"
+          />
+          <button type="submit" class="btn btn-primary btn-sm">Search</button>
+        </div>
+      </div>
+      <app-car-list></app-car-list>
+    </div>
+  </div>
+</div>
