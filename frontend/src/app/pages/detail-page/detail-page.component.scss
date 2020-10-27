@@ -1,0 +1,42 @@
+.page-wrapper {
+  .main-img {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  h4 {
+    a {
+      color: unset;
+    }
+  }
+
+  .price {
+    color: green;
+    margin-bottom: 24px;
+  }
+  .header {
+    h2 {
+      margin-bottom: 2px;
+    }
+
+    p {
+      margin-bottom: 6px;
+    }
+  }
+
+  .phone-wrapper {
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  .details-wrapper {
+    p {
+      margin-bottom: 2px;
+
+      .label {
+        color: #707676;
+        margin-right: 8px;
+      }
+    }
+  }
+}

@@ -3,14 +3,21 @@
     <div class="col-md-4">
       <div
         class="image-container"
-        [style]="{ 'background-image': 'url(assets/images/' + image + ')' }"
+        [style]="{
+          'background-image': 'url(assets/images/' + carData.img + ')'
+        }"
       ></div>
     </div>
     <div class="col-md-8">
-      <h5>{{ name }}</h5>
-      <div class="mileage">{{ mileage | number }} km</div>
-      <div class="location">{{ location }}</div>
-      <div class="price">{{ price | currency: "Rs. ":"code" }}</div>
+      <h5 appTooltip>
+        {{ carData.name }}
+        <ng-template #tooltipTemplate>
+          <div class="app-tooltip">This is my tooltip!</div>
+        </ng-template>
+      </h5>
+      <div class="mileage">{{ carData.mileage | number }} km</div>
+      <div class="location">{{ carData.location }}</div>
+      <div class="price">{{ carData.price | currency: "Rs. ":"code" }}</div>
     </div>
   </div>
 </div>

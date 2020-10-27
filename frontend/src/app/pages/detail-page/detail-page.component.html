@@ -1,1 +1,49 @@
-<p>detail-page works!</p>
+<div class="page-wrapper">
+  <div class="header">
+    <h2>{{ carInfo.name }}</h2>
+    <p>
+      Posted on {{ carInfo.posted | date: "medium" }}, {{ carInfo.location }}
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <img
+        class="main-img"
+        [attr.src]="'assets/images/' + id + '.jpg'"
+        [attr.alt]="id"
+      />
+
+      <h1 class="price">
+        {{ carInfo.price | currency: "Rs. ":"code":".0-0" }}
+      </h1>
+
+      <div class="desc-container">
+        <h6>Description</h6>
+        <div [innerHTML]="description"></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="phone-wrapper">
+        <fa-icon [icon]="faPhone" size="2x"></fa-icon>
+        <h4 class="ml-2">
+          <a [attr.href]="'tel:+94' + carInfo.phone">
+            {{ carInfo.phone | slice: 0:3 }} {{ carInfo.phone | slice: 3:6 }}
+            {{ carInfo.phone | slice: 6:10 }}
+          </a>
+        </h4>
+      </div>
+      <div class="details-wrapper">
+        <p><span class="label">Brand:</span> Audi</p>
+        <p><span class="label">Model:</span> A4</p>
+        <p><span class="label">Trim / Edition:</span> Stronic Facelift</p>
+        <p><span class="label">Model year:</span> 2013</p>
+        <p><span class="label">Condition:</span> Used</p>
+        <p><span class="label">Transmission:</span> Tiptronic</p>
+        <p><span class="label">Body type:</span> Saloon</p>
+        <p><span class="label">Fuel type:</span> Petrol</p>
+        <p><span class="label">Engine capacity:</span> 1,800 cc</p>
+        <p><span class="label">Mileage:</span> 70,000 km</p>
+      </div>
+    </div>
+  </div>
+</div>

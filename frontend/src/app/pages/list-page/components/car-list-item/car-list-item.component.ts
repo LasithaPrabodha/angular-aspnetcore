@@ -1,8 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
+  HostListener,
   Input,
-  OnInit,
+  Output,
 } from '@angular/core';
 
 @Component({
@@ -11,13 +13,13 @@ import {
   styleUrls: ['./car-list-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CarListItemComponent implements OnInit {
-  @Input() image = '';
-  @Input() name = '';
-  @Input() location = '';
-  @Input() mileage = '';
-  @Input() price = '';
-  constructor() {}
+export class CarListItemComponent {
+  @Input() carData = null;
 
-  ngOnInit(): void {}
+  @Output() onItemClick: EventEmitter<number> = new EventEmitter();
+
+  @HostListener('click')
+  onClick() {
+    this.onItemClick.emit(this.carData.id);
+  }
 }

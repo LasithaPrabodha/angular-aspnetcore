@@ -20,3 +20,18 @@
     width: 100px;
   }
 }
+
+.filter-wrapper {
+  margin-bottom: 24px;
+  .card-header {
+    padding: 4px 12px;
+  }
+
+  .range-wrapper {
+    display: flex;
+
+    > :nth-child(2) {
+      margin-left: 8px;
+    }
+  }
+}

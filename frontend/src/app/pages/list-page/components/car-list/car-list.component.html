@@ -1,10 +1,7 @@
-<ng-container *ngFor="let item of carlist; let i = index">
+<ng-container *ngFor="let item of carlist; trackBy: trackByFn; let i = index">
   <app-car-list-item
-    [image]="item.img"
-    [name]="item.name"
-    [price]="item.price"
-    [location]="item.location"
-    [mileage]="item.mileage"
+    [carData]="item"
+    (onItemClick)="navigate($event)"
   ></app-car-list-item>
   <hr *ngIf="i !== carlist.length - 1" />
 </ng-container>

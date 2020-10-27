@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListPageComponent } from './list-page.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FilterComponent } from './components/filter/filter.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarListComponent } from './components/car-list/car-list.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarListItemComponent } from './components/car-list-item/car-list-item.component';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
+import { DirectivesModule } from 'src/app/shared/directives/directives.module';
 
 const routes: Routes = [
   {
@@ -17,12 +17,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ListPageComponent, FilterComponent, CarListComponent, CarListItemComponent],
+  declarations: [ListPageComponent, CarListComponent, CarListItemComponent],
   imports: [
     CommonModule,
-    NgbModule,
+    FormsModule,
+    ComponentsModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    DirectivesModule,
     RouterModule.forChild(routes),
   ],
 })

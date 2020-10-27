@@ -1,35 +1,92 @@
 <div class="page-wrapper">
-  <div class="row">
-    <div class="col-md-3 filters-wrapper">
-      <app-filter
-        title="Brand"
-        [filter]="form.controls.brand"
-        type="typeahead"
-      ></app-filter>
-      <app-filter
-        title="Year"
-        [filter]="form.controls.year"
-        type="array"
-      ></app-filter>
-      <app-filter
-        title="Price"
-        [filter]="form.controls.price"
-        type="array"
-      ></app-filter>
-    </div>
-    <div class="col-md-9 list-wrapper">
-      <div class="container">
-        <div class="search">
-          <input
-            type="text"
-            class="form-control input-sm"
-            maxlength="64"
-            placeholder="What are you looking for?"
-          />
-          <button type="submit" class="btn btn-primary btn-sm">Search</button>
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-md-3 filters-wrapper">
+        <div class="filter-wrapper">
+          <h6 class="">Brand</h6>
+          <app-typeahead
+            formControlName="brand"
+            placeholder="Select brand"
+            [list]="carModels"
+          ></app-typeahead>
+
+          <button
+            class="btn btn-outline-secondary btn-block mt-3"
+            type="submit"
+          >
+            <h6 class="mb-1">Apply</h6>
+          </button>
+        </div>
+
+        <div class="filter-wrapper">
+          <h6 class="">Year</h6>
+
+          <div class="range-wrapper" formArrayName="year">
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              [formControlName]="0"
+              placeholder="Min"
+            />
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              [formControlName]="1"
+              placeholder="Max"
+            />
+          </div>
+
+          <button
+            class="btn btn-outline-secondary btn-block mt-3"
+            type="submit"
+          >
+            <h6 class="mb-1">Apply</h6>
+          </button>
+        </div>
+
+        <div class="filter-wrapper">
+          <h6 class="">Price</h6>
+          <div class="range-wrapper" formArrayName="year">
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              [formControlName]="0"
+              placeholder="Min"
+            />
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              [formControlName]="1"
+              placeholder="Max"
+            />
+          </div>
+          <button
+            class="btn btn-outline-secondary btn-block mt-3"
+            type="submit"
+          >
+            <h6 class="mb-1">Apply</h6>
+          </button>
         </div>
       </div>
-      <app-car-list></app-car-list>
+      <div class="col-md-9 list-wrapper">
+        <div class="container">
+          <div class="search">
+            <input
+              type="text"
+              class="form-control input-sm"
+              maxlength="64"
+              placeholder="What are you looking for?"
+              formControlName="search"
+            />
+            <button type="submit" class="btn btn-primary btn-sm">Search</button>
+          </div>
+        </div>
+        <app-car-list></app-car-list>
+      </div>
     </div>
-  </div>
+  </form>
 </div>
