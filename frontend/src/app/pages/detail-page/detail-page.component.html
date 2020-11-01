@@ -27,8 +27,7 @@
         <fa-icon [icon]="faPhone" size="2x"></fa-icon>
         <h4 class="ml-2">
           <a [attr.href]="'tel:+94' + carInfo.phone">
-            {{ carInfo.phone | slice: 0:3 }} {{ carInfo.phone | slice: 3:6 }}
-            {{ carInfo.phone | slice: 6:10 }}
+            {{ carInfo.phone | appPhoneNumber }}
           </a>
         </h4>
       </div>

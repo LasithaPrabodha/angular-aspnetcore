@@ -4,6 +4,7 @@ import { DetailPageComponent } from './detail-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DirectivesModule } from '../../shared/directives/directives.module';
+import { PipesModule } from '../../shared/pipes/pipes.module';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
     CommonModule,
     FontAwesomeModule,
     DirectivesModule,
+    PipesModule,
     RouterModule.forChild(routes),
   ],
 })
